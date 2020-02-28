@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Demo</title>
+  </head>
+
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <!--  start naaWidget snippet -->
+    <script>
+      ;(function(window) {
+        var s = document.createElement('script')
+        s.type = 'text/javascript'
+        s.async = true
+        s.src = './index.js'
+        s.onload = () => {
+          var s_s = document.getElementsByTagName('head')[0]
+          s_s.insertAdjacentHTML(
+            'beforeend',
+            `<link rel="stylesheet" type="text/css" href="./index.css" />`,
+          )
+          naaWidget.init({
+            environment: 'dev',
+            authId: 'xxxxxxx',
+            apiKey: 'xxxxxxx',
+          })
+          console.log('naaWidget Loaded!', naaWidget)
+        }
+        var x = document.getElementsByTagName('script')[0]
+        x.parentNode.insertBefore(s, x)
+      })(window, undefined)
+    </script>
+    <!-- End naaWidget snippet -->
+  </body>
+</html>

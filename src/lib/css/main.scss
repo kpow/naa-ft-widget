@@ -1,0 +1,144 @@
+
+// site color vars
+// black to white
+$color-black: #1A1A1A;
+$color-grey4: #4D4D4D;
+$color-grey3: #A6A6A6;
+$color-grey2: #CCCCCD;
+$color-grey1: #EFEFF2;
+$color-white: #FFFFFF;
+// teals
+$color-darkest-teal: #0E374E;
+$color-darker-teal: #174B68;
+$color-lighter-teal: #22768F;
+$color-lightest-teal: #397F94;
+// oranges
+$color-dark-orange: #DFAD63;
+$color-light-orange: #F2C27A;
+//utility colors
+$color-emergency: #C63131;
+// type colors
+$color-type-base: #4c4c4c;
+// gradients
+$gradient-dark-teal : linear-gradient(115.44deg, $color-darker-teal 0.55%, $color-darkest-teal 95.88%);
+$gradient-orange : linear-gradient(294.74deg, $color-light-orange 0.51%, $color-dark-orange 98.78%);
+// box shadows
+$box-shadow-card : 0px 0px 5px rgba(0, 0, 0, 0.1);
+
+
+//------------
+// global type styles
+//-------------
+body{
+	background-color:$color-grey1;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 26px;
+	color: $color-type-base;
+}
+
+img, picture {
+	width: 100%;
+	height: auto;
+}
+
+//----------------
+//button styles
+//----------------
+a.primary-button, a.secondary-button, a.outline-button{
+	text-decoration: none;
+}
+
+.primary-button{
+	border-radius: 100px;
+	padding: 6px 20px 6px 20px;
+	height:40px;
+	text-align: center;
+	color: $color-white;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+}
+
+select.secondary-button{
+	// tricky one no ie 11 support pretty gracefull fallback though
+	-webkit-appearance: none;
+	padding: 6px 20px 6px 20px;
+	border-radius: 100px;
+	cursor: pointer;
+}
+
+.secondary-button{
+	border-radius: 100px;
+	padding: 6px 20px 6px 20px;
+	height:34px;
+	text-align: center;
+	color: $color-white;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+}
+
+.outline-button{
+	border-radius: 100px;
+	padding: 6px 20px 6px 20px;
+	height:46px;
+	width: 100%;
+	text-align: center;
+	color: $color-darkest-teal;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	background: transparent;
+	line-height: 2.5;
+	border: 2px solid $color-lighter-teal;
+}
+
+.button-dark{
+	background:$color-darkest-teal;
+}
+
+.button-dark:hover{
+	background:$color-darker-teal;
+}
+
+.button-light{
+	background:$color-dark-orange;
+	color: $color-darkest-teal;
+}
+
+.button-light:hover{
+	background:$color-light-orange;
+}
+
+a:visited {color:inherit;}
+
+
+.card-toggle-button{
+	border: none;
+	background: none;
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	font-weight: 500;
+	padding-top: 10px;
+	//need to not do this
+	margin-top: -45px;
+	color: $color-lighter-teal;
+}
+
+//----------------
+// named global sections
+//---------------
+
+
+/* ================================= 
+  Media Queries 
+==================================== */
+
+// desktop styles
+@media (min-width: 680px) {
+
+
+}

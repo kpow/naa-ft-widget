@@ -1,0 +1,1044 @@
+{
+    "arriving":[
+       {
+          "id":"UA985",
+          "f_id":"United Airlines 985",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"IAD",
+          "remote_city":"Washington, DC",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 03:30:00",
+             "estimated_gate":"2020-02-28 03:30:00",
+             "gate":"D3"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 04:25:00",
+             "estimated_gate":"2020-02-28 04:25:00",
+             "terminal":"EM",
+             "gate":"B20"
+          }
+       },
+       {
+          "id":"WN164",
+          "f_id":"Southwest Airlines 164",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"BWI",
+          "remote_city":"Baltimore, MD",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 23:35:00",
+             "estimated_gate":"2020-02-27 23:35:00",
+             "gate":"C12"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 00:30:00",
+             "estimated_runway":"2020-02-28 00:06:00",
+             "terminal":"",
+             "gate":"A5"
+          }
+       },
+       {
+          "id":"WN845",
+          "f_id":"Southwest Airlines 845",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"BWI",
+          "remote_city":"Baltimore, MD",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 02:45:00",
+             "gate":"B10"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 03:45:00",
+             "terminal":"",
+             "gate":"A3"
+          }
+       },
+       {
+          "id":"AA1938",
+          "f_id":"American Airlines 1938",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"CLT",
+          "remote_city":"Charlotte, NC",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 03:40:00",
+             "estimated_gate":"2020-02-28 03:40:00",
+             "gate":"C19"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 04:50:00",
+             "estimated_gate":"2020-02-28 04:50:00",
+             "terminal":"",
+             "gate":"A8"
+          }
+       },
+       {
+          "id":"AA2020",
+          "f_id":"American Airlines 2020",
+          "time":"2020-02-27 18:25:05",
+          "status":"In Air",
+          "remote_airport":"CLT",
+          "remote_city":"Charlotte, NC",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 22:55:00",
+             "actual_gate":"2020-02-27 22:52:00",
+             "actual_runway":"2020-02-27 23:13:00",
+             "gate":"D6"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 00:06:00",
+             "estimated_gate":"2020-02-27 23:56:00",
+             "estimated_runway":"2020-02-27 23:57:00",
+             "terminal":"",
+             "gate":"A8"
+          }
+       },
+       {
+          "id":"AA2587",
+          "f_id":"American Airlines 2587",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"DFW",
+          "remote_city":"Dallas-Fort Worth, TX",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 02:30:00",
+             "estimated_gate":"2020-02-28 02:30:00",
+             "terminal":"D",
+             "gate":"D30"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 05:17:00",
+             "estimated_gate":"2020-02-28 05:17:00",
+             "terminal":"",
+             "gate":"A7"
+          }
+       },
+       {
+          "id":"AA3782",
+          "f_id":"American Airlines 3782",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"ORD",
+          "remote_city":"Chicago, IL",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:40:00",
+             "estimated_gate":"2020-02-28 00:40:00",
+             "terminal":"T3",
+             "gate":"L4"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 02:54:00",
+             "estimated_gate":"2020-02-28 02:54:00",
+             "terminal":"",
+             "gate":"A9A"
+          }
+       },
+       {
+          "id":"AA3987",
+          "f_id":"American Airlines 3987",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"MIA",
+          "remote_city":"Miami, FL",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 02:32:00",
+             "estimated_gate":"2020-02-28 02:32:00",
+             "terminal":"N",
+             "gate":"D60D"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 04:57:00",
+             "estimated_gate":"2020-02-28 04:57:00",
+             "terminal":"",
+             "gate":"A9B"
+          }
+       },
+       {
+          "id":"AA4505",
+          "f_id":"American Airlines 4505",
+          "time":"2020-02-27 18:25:05",
+          "status":"Delayed",
+          "remote_airport":"LGA",
+          "remote_city":"New York, NY",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 02:10:00",
+             "estimated_gate":"2020-02-28 02:48:00",
+             "terminal":"B",
+             "gate":"C5"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 03:33:00",
+             "estimated_gate":"2020-02-28 04:11:00",
+             "terminal":"",
+             "gate":"A2"
+          }
+       },
+       {
+          "id":"AA5268",
+          "f_id":"American Airlines 5268",
+          "time":"2020-02-27 18:25:05",
+          "status":"Departed",
+          "remote_airport":"PHL",
+          "remote_city":"Philadelphia, PA",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 23:10:00",
+             "actual_gate":"2020-02-27 23:19:00",
+             "terminal":"F",
+             "gate":"F19"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 00:19:00",
+             "estimated_gate":"2020-02-28 00:28:00",
+             "estimated_runway":"2020-02-27 23:52:00",
+             "terminal":"",
+             "gate":"A2"
+          }
+       },
+       {
+          "id":"AA5293",
+          "f_id":"American Airlines 5293",
+          "time":"2020-02-27 18:25:05",
+          "status":"Arrived",
+          "remote_airport":"CLT",
+          "remote_city":"Charlotte, NC",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 21:09:00",
+             "actual_gate":"2020-02-27 21:27:00",
+             "actual_runway":"2020-02-27 21:50:00",
+             "gate":"E18"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-27 22:21:00",
+             "actual_gate":"2020-02-27 22:43:00",
+             "actual_runway":"2020-02-27 22:35:00",
+             "terminal":"",
+             "gate":"A2"
+          }
+       },
+       {
+          "id":"AA5367",
+          "f_id":"American Airlines 5367",
+          "time":"2020-02-27 18:25:05",
+          "status":"Delayed",
+          "remote_airport":"DCA",
+          "remote_city":"Washington, DC",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:40:00",
+             "estimated_gate":"2020-02-28 02:41:00",
+             "terminal":"C",
+             "gate":"35X"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 01:49:00",
+             "estimated_gate":"2020-02-28 03:40:00",
+             "terminal":"",
+             "gate":"A8"
+          }
+       },
+       {
+          "id":"AA5369",
+          "f_id":"American Airlines 5369",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"CLT",
+          "remote_city":"Charlotte, NC",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 01:10:00",
+             "estimated_gate":"2020-02-28 01:10:00",
+             "gate":"E31"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 02:26:00",
+             "estimated_gate":"2020-02-28 02:26:00",
+             "terminal":"",
+             "gate":"A6"
+          }
+       },
+       {
+          "id":"AA5692",
+          "f_id":"American Airlines 5692",
+          "time":"2020-02-27 18:25:05",
+          "status":"Delayed",
+          "remote_airport":"PHL",
+          "remote_city":"Philadelphia, PA",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 01:45:00",
+             "estimated_gate":"2020-02-28 04:07:00",
+             "terminal":"F",
+             "gate":"F18"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 02:51:00",
+             "estimated_gate":"2020-02-28 05:13:00",
+             "terminal":"",
+             "gate":"A6"
+          }
+       },
+       {
+          "id":"DL1153",
+          "f_id":"Delta Air Lines 1153",
+          "time":"2020-02-27 18:25:05",
+          "status":"In Air",
+          "remote_airport":"ATL",
+          "remote_city":"Atlanta, GA",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 22:37:00",
+             "actual_gate":"2020-02-27 22:46:00",
+             "actual_runway":"2020-02-27 22:56:00",
+             "terminal":"S",
+             "gate":"C41"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 00:08:00",
+             "estimated_gate":"2020-02-28 00:09:00",
+             "estimated_runway":"2020-02-28 00:06:00",
+             "terminal":"",
+             "gate":"B23"
+          }
+       },
+       {
+          "id":"DL2095",
+          "f_id":"Delta Air Lines 2095",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"ATL",
+          "remote_city":"Atlanta, GA",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 03:39:00",
+             "estimated_gate":"2020-02-28 03:39:00",
+             "terminal":"S",
+             "gate":"B05"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 05:10:00",
+             "estimated_gate":"2020-02-28 05:10:00",
+             "terminal":"",
+             "gate":"B24"
+          }
+       },
+       {
+          "id":"DL2275",
+          "f_id":"Delta Air Lines 2275",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"ATL",
+          "remote_city":"Atlanta, GA",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 02:27:00",
+             "estimated_gate":"2020-02-28 02:27:00",
+             "terminal":"S",
+             "gate":"E16"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 03:59:00",
+             "estimated_gate":"2020-02-28 03:59:00",
+             "terminal":"",
+             "gate":"B19"
+          }
+       },
+       {
+          "id":"DL2553",
+          "f_id":"Delta Air Lines 2553",
+          "time":"2020-02-27 18:25:05",
+          "status":"Arrived",
+          "remote_airport":"ATL",
+          "remote_city":"Atlanta, GA",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 21:23:00",
+             "actual_gate":"2020-02-27 21:19:00",
+             "actual_runway":"2020-02-27 21:30:00",
+             "terminal":"S",
+             "gate":"C37"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-27 22:55:00",
+             "actual_gate":"2020-02-27 22:41:00",
+             "actual_runway":"2020-02-27 22:37:00",
+             "terminal":"",
+             "gate":"B23"
+          }
+       },
+       {
+          "id":"DL2564",
+          "f_id":"Delta Air Lines 2564",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"ATL",
+          "remote_city":"Atlanta, GA",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:59:00",
+             "estimated_gate":"2020-02-28 00:59:00",
+             "terminal":"S",
+             "gate":"B06"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 02:35:00",
+             "estimated_gate":"2020-02-28 02:35:00",
+             "terminal":"",
+             "gate":"B23"
+          }
+       },
+       {
+          "id":"DL3534",
+          "f_id":"Delta Air Lines 3534",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"DTW",
+          "remote_city":"Detroit, MI",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 01:45:00",
+             "estimated_gate":"2020-02-28 01:45:00",
+             "terminal":"EM",
+             "gate":"A59"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 03:46:00",
+             "estimated_gate":"2020-02-28 03:46:00",
+             "terminal":"",
+             "gate":"B25"
+          }
+       },
+       {
+          "id":"DL5076",
+          "f_id":"Delta Air Lines 5076",
+          "time":"2020-02-27 18:25:05",
+          "status":"Delayed",
+          "remote_airport":"LGA",
+          "remote_city":"New York, NY",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:00:00",
+             "estimated_gate":"2020-02-28 01:23:00",
+             "terminal":"C",
+             "gate":"C12"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 01:39:00",
+             "estimated_gate":"2020-02-28 03:02:00",
+             "terminal":"",
+             "gate":"B16"
+          }
+       },
+       {
+          "id":"DL5089",
+          "f_id":"Delta Air Lines 5089",
+          "time":"2020-02-27 18:25:05",
+          "status":"Cancelled",
+          "remote_airport":"LGA",
+          "remote_city":"New York, NY",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 22:25:00",
+             "terminal":"C",
+             "gate":"C13"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 00:02:00",
+             "terminal":"",
+             "gate":"B17"
+          }
+       },
+       {
+          "id":"DL5222",
+          "f_id":"Delta Air Lines 5222",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"JFK",
+          "remote_city":"New York, NY",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 02:29:00",
+             "estimated_gate":"2020-02-28 02:29:00",
+             "terminal":"4",
+             "gate":"B49"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 04:15:00",
+             "estimated_gate":"2020-02-28 04:15:00",
+             "terminal":"",
+             "gate":"B17"
+          }
+       },
+       {
+          "id":"F91158",
+          "f_id":"Frontier Airlines 1158",
+          "time":"2020-02-27 18:25:05",
+          "status":"Departed",
+          "remote_airport":"MCO",
+          "remote_city":"Orlando, FL",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 23:15:00",
+             "actual_gate":"2020-02-27 23:10:00",
+             "terminal":"A",
+             "gate":"12"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 01:15:00",
+             "estimated_gate":"2020-02-28 00:48:00",
+             "estimated_runway":"2020-02-28 00:38:00",
+             "terminal":"",
+             "gate":"B18"
+          }
+       },
+       {
+          "id":"G41742",
+          "f_id":"Allegiant Air 1742",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"FLL",
+          "remote_city":"Fort Lauderdale, FL",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 23:22:00",
+             "estimated_gate":"2020-02-27 23:22:00",
+             "terminal":"1",
+             "gate":"C7"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 01:35:00",
+             "estimated_gate":"2020-02-28 01:35:00",
+             "estimated_runway":"2020-02-28 01:01:00",
+             "terminal":"",
+             "gate":"B20"
+          }
+       },
+       {
+          "id":"UA4274",
+          "f_id":"United Airlines 4274",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"EWR",
+          "remote_city":"Newark, NJ",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 02:45:00",
+             "estimated_gate":"2020-02-28 02:45:00",
+             "terminal":"A",
+             "gate":"A23A"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 04:15:00",
+             "estimated_gate":"2020-02-28 04:15:00",
+             "terminal":"",
+             "gate":"B28"
+          }
+       },
+       {
+          "id":"UA5023",
+          "f_id":"United Airlines 5023",
+          "time":"2020-02-27 18:25:05",
+          "status":"Delayed",
+          "remote_airport":"EWR",
+          "remote_city":"Newark, NJ",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 22:05:00",
+             "estimated_gate":"2020-02-28 00:44:00",
+             "terminal":"A",
+             "gate":"A23A"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-27 23:33:00",
+             "estimated_gate":"2020-02-28 02:12:00",
+             "terminal":"",
+             "gate":"B28"
+          }
+       },
+       {
+          "id":"UA5480",
+          "f_id":"United Airlines 5480",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"DEN",
+          "remote_city":"Denver, CO",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:26:00",
+             "estimated_gate":"2020-02-28 00:26:00",
+             "gate":"A87"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 04:00:00",
+             "estimated_gate":"2020-02-28 04:00:00",
+             "terminal":"",
+             "gate":"B18"
+          }
+       },
+       {
+          "id":"UA5599",
+          "f_id":"United Airlines 5599",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"ORD",
+          "remote_city":"Chicago, IL",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:00:00",
+             "estimated_gate":"2020-02-28 00:00:00",
+             "terminal":"2",
+             "gate":"E5"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 02:16:00",
+             "estimated_gate":"2020-02-28 01:59:00",
+             "estimated_runway":"2020-02-28 01:28:00",
+             "terminal":"",
+             "gate":"B27"
+          }
+       },
+       {
+          "id":"UA5702",
+          "f_id":"United Airlines 5702",
+          "time":"2020-02-27 18:25:05",
+          "status":"Arrived",
+          "remote_airport":"ORD",
+          "remote_city":"Chicago, IL",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 20:45:00",
+             "actual_gate":"2020-02-27 20:43:00",
+             "actual_runway":"2020-02-27 21:09:00",
+             "terminal":"2",
+             "gate":"F6"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-27 23:05:00",
+             "actual_gate":"2020-02-27 22:48:00",
+             "actual_runway":"2020-02-27 22:45:00",
+             "terminal":"",
+             "gate":"B27"
+          }
+       },
+       {
+          "id":"UA6006",
+          "f_id":"United Airlines 6006",
+          "time":"2020-02-27 18:25:05",
+          "status":"Arrived",
+          "remote_airport":"IAD",
+          "remote_city":"Washington, DC",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 22:20:00",
+             "actual_gate":"2020-02-27 22:20:00",
+             "actual_runway":"2020-02-27 22:45:00",
+             "gate":"D10"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-27 23:24:00",
+             "actual_gate":"2020-02-27 23:21:00",
+             "actual_runway":"2020-02-27 23:19:00",
+             "terminal":"",
+             "gate":"B29"
+          }
+       },
+       {
+          "id":"UA6291",
+          "f_id":"United Airlines 6291",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"IAH",
+          "remote_city":"Houston, TX",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 02:00:00",
+             "estimated_gate":"2020-02-28 02:00:00",
+             "terminal":"C",
+             "gate":"C44"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 04:54:00",
+             "estimated_gate":"2020-02-28 04:54:00",
+             "terminal":"",
+             "gate":"B29"
+          }
+       },
+       {
+          "id":"WN1124",
+          "f_id":"Southwest Airlines 1124",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"MCO",
+          "remote_city":"Orlando, FL",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:05:00",
+             "estimated_gate":"2020-02-28 00:05:00",
+             "terminal":"A",
+             "gate":"109"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 01:55:00",
+             "estimated_gate":"2020-02-28 01:55:00",
+             "estimated_runway":"2020-02-28 01:55:00",
+             "terminal":"",
+             "gate":"A5"
+          }
+       }
+    ],
+    "departing":[
+       {
+          "id":"AA484",
+          "f_id":"American Airlines 484",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"CLT",
+          "remote_city":"Charlotte, NC",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 10:09:00",
+             "estimated_gate":"2020-02-28 10:09:00",
+             "gate":"A8"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 11:30:00",
+             "estimated_gate":"2020-02-28 11:30:00",
+             "terminal":"",
+             "gate":"D3"
+          }
+       },
+       {
+          "id":"WN830",
+          "f_id":"Southwest Airlines 830",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"BWI",
+          "remote_city":"Baltimore, MD",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 01:00:00",
+             "estimated_gate":"2020-02-28 01:00:00",
+             "gate":"A5"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 02:05:00",
+             "estimated_runway":"2020-02-28 01:39:00",
+             "terminal":"",
+             "gate":"A6"
+          }
+       },
+       {
+          "id":"AA2020",
+          "f_id":"American Airlines 2020",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"CLT",
+          "remote_city":"Charlotte, NC",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:47:00",
+             "estimated_gate":"2020-02-28 00:47:00",
+             "gate":"A8"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 02:20:00",
+             "estimated_gate":"2020-02-28 02:20:00",
+             "terminal":"",
+             "gate":"B16"
+          }
+       },
+       {
+          "id":"AA3367",
+          "f_id":"American Airlines 3367",
+          "time":"2020-02-27 18:25:05",
+          "status":"In Air",
+          "remote_airport":"MIA",
+          "remote_city":"Miami, FL",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 22:34:00",
+             "actual_gate":"2020-02-27 22:29:00",
+             "actual_runway":"2020-02-27 22:40:00",
+             "gate":"A8"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 01:04:00",
+             "estimated_gate":"2020-02-28 01:20:00",
+             "estimated_runway":"2020-02-28 01:07:00",
+             "terminal":"N",
+             "gate":"D60K"
+          }
+       },
+       {
+          "id":"AA3988",
+          "f_id":"American Airlines 3988",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"MIA",
+          "remote_city":"Miami, FL",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 10:11:00",
+             "estimated_gate":"2020-02-28 10:11:00",
+             "gate":"A9"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 12:41:00",
+             "estimated_gate":"2020-02-28 12:41:00",
+             "terminal":"N",
+             "gate":"D55"
+          }
+       },
+       {
+          "id":"AA4029",
+          "f_id":"American Airlines 4029",
+          "time":"2020-02-27 18:25:05",
+          "status":"In Air",
+          "remote_airport":"JFK",
+          "remote_city":"New York, NY",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 22:43:00",
+             "actual_gate":"2020-02-27 22:37:00",
+             "actual_runway":"2020-02-27 22:51:00",
+             "gate":"A9"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 00:00:00",
+             "estimated_gate":"2020-02-27 23:53:00",
+             "estimated_runway":"2020-02-27 23:35:00",
+             "terminal":"8",
+             "gate":"32H"
+          }
+       },
+       {
+          "id":"AA5293",
+          "f_id":"American Airlines 5293",
+          "time":"2020-02-27 18:25:05",
+          "status":"Departed",
+          "remote_airport":"CLT",
+          "remote_city":"Charlotte, NC",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 22:51:00",
+             "actual_gate":"2020-02-27 23:11:00",
+             "gate":"A2"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 00:19:00",
+             "estimated_gate":"2020-02-28 00:39:00",
+             "estimated_runway":"2020-02-27 23:39:00",
+             "terminal":"",
+             "gate":"E3"
+          }
+       },
+       {
+          "id":"AA5301",
+          "f_id":"American Airlines 5301",
+          "time":"2020-02-27 18:25:05",
+          "status":"In Air",
+          "remote_airport":"LGA",
+          "remote_city":"New York, NY",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 21:13:00",
+             "actual_gate":"2020-02-27 22:47:00",
+             "actual_runway":"2020-02-27 23:02:00",
+             "gate":"A7"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-27 22:39:00",
+             "estimated_gate":"2020-02-28 00:11:00",
+             "estimated_runway":"2020-02-27 23:52:00",
+             "terminal":"B",
+             "gate":"D9F"
+          }
+       },
+       {
+          "id":"DL1153",
+          "f_id":"Delta Air Lines 1153",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"ATL",
+          "remote_city":"Atlanta, GA",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:47:00",
+             "estimated_gate":"2020-02-28 00:47:00",
+             "gate":"B23"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 02:45:00",
+             "estimated_gate":"2020-02-28 02:44:00",
+             "terminal":"S",
+             "gate":"C42"
+          }
+       },
+       {
+          "id":"DL2553",
+          "f_id":"Delta Air Lines 2553",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"ATL",
+          "remote_city":"Atlanta, GA",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 23:35:00",
+             "estimated_gate":"2020-02-27 23:35:00",
+             "gate":"B23"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 01:35:00",
+             "estimated_gate":"2020-02-28 01:35:00",
+             "estimated_runway":"2020-02-28 01:04:00",
+             "terminal":"S",
+             "gate":"C43"
+          }
+       },
+       {
+          "id":"DL3544",
+          "f_id":"Delta Air Lines 3544",
+          "time":"2020-02-27 18:25:05",
+          "status":"In Air",
+          "remote_airport":"DTW",
+          "remote_city":"Detroit, MI",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 22:32:00",
+             "actual_gate":"2020-02-27 22:33:00",
+             "actual_runway":"2020-02-27 22:47:00",
+             "gate":"B17"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 00:40:00",
+             "estimated_gate":"2020-02-28 00:38:00",
+             "estimated_runway":"2020-02-28 00:15:00",
+             "terminal":"EM",
+             "gate":"B7"
+          }
+       },
+       {
+          "id":"DL5089",
+          "f_id":"Delta Air Lines 5089",
+          "time":"2020-02-27 18:25:05",
+          "status":"Cancelled",
+          "remote_airport":"LGA",
+          "remote_city":"New York, NY",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:33:00",
+             "gate":"B17"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 02:14:00",
+             "terminal":"C",
+             "gate":"C13"
+          }
+       },
+       {
+          "id":"F91158",
+          "f_id":"Frontier Airlines 1158",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"LAS",
+          "remote_city":"Las Vegas, NV",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 02:10:00",
+             "estimated_gate":"2020-02-28 02:10:00",
+             "gate":"B18"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 08:01:00",
+             "estimated_gate":"2020-02-28 08:01:00",
+             "terminal":"3",
+             "gate":"D16"
+          }
+       },
+       {
+          "id":"G41762",
+          "f_id":"Allegiant Air 1762",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"FLL",
+          "remote_city":"Fort Lauderdale, FL",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 02:20:00",
+             "estimated_gate":"2020-02-28 02:20:00",
+             "gate":"B20"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 04:30:00",
+             "estimated_gate":"2020-02-28 04:30:00",
+             "terminal":"1",
+             "gate":"C7"
+          }
+       },
+       {
+          "id":"UA4363",
+          "f_id":"United Airlines 4363",
+          "time":"2020-02-27 18:25:05",
+          "status":"Departed",
+          "remote_airport":"EWR",
+          "remote_city":"Newark, NJ",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 22:30:00",
+             "actual_gate":"2020-02-27 23:12:00",
+             "gate":"B28"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 00:13:00",
+             "estimated_gate":"2020-02-28 00:35:00",
+             "estimated_runway":"2020-02-27 23:23:00",
+             "terminal":"A",
+             "gate":"A23"
+          }
+       },
+       {
+          "id":"UA4993",
+          "f_id":"United Airlines 4993",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"EWR",
+          "remote_city":"Newark, NJ",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:15:00",
+             "estimated_gate":"2020-02-28 00:15:00",
+             "gate":"B28"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 01:58:00",
+             "estimated_gate":"2020-02-28 01:58:00",
+             "terminal":"A",
+             "gate":"A26A"
+          }
+       },
+       {
+          "id":"UA5716",
+          "f_id":"United Airlines 5716",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"ORD",
+          "remote_city":"Chicago, IL",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 23:45:00",
+             "estimated_gate":"2020-02-27 23:45:00",
+             "gate":"B27"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 02:23:00",
+             "estimated_gate":"2020-02-28 02:14:00",
+             "estimated_runway":"2020-02-28 01:44:00",
+             "terminal":"2",
+             "gate":"F3"
+          }
+       },
+       {
+          "id":"UA6006",
+          "f_id":"United Airlines 6006",
+          "time":"2020-02-27 18:25:05",
+          "status":"Scheduled",
+          "remote_airport":"IAD",
+          "remote_city":"Washington, DC",
+          "depart_info":{
+             "scheduled_gate":"2020-02-28 00:45:00",
+             "estimated_gate":"2020-02-28 00:45:00",
+             "gate":"B29"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-28 01:44:00",
+             "estimated_gate":"2020-02-28 01:44:00",
+             "terminal":"",
+             "gate":"D2"
+          }
+       },
+       {
+          "id":"WN1532",
+          "f_id":"Southwest Airlines 1532",
+          "time":"2020-02-27 18:25:05",
+          "status":"In Air",
+          "remote_airport":"BWI",
+          "remote_city":"Baltimore, MD",
+          "depart_info":{
+             "scheduled_gate":"2020-02-27 22:30:00",
+             "actual_gate":"2020-02-27 22:26:00",
+             "actual_runway":"2020-02-27 22:48:00",
+             "gate":"A5"
+          },
+          "arrive_info":{
+             "scheduled_gate":"2020-02-27 23:35:00",
+             "estimated_gate":"2020-02-27 23:30:00",
+             "estimated_runway":"2020-02-27 23:30:00",
+             "terminal":"",
+             "gate":"B12"
+          }
+       }
+    ],
+    "time":1582846827
+}
