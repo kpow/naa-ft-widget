@@ -12,7 +12,12 @@ export default {
       document.body.appendChild(targetContainer)
     }
     ReactDOM.render(
-      <App apiKey={config.apiKey} authId={config.authId} env={config.env} data={arriving} />,
+      <App apiKey={config.apiKey} 
+           authId={config.authId} 
+           env={config.env} 
+           arriveData={arriving} 
+           departData={departing} 
+       />,
       document.getElementById(targetContainerId),
     )
   },

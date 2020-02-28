@@ -23,8 +23,8 @@ const flightValues = {
     return termValue+divider+gateValue
 
    },
-   getArrivalTime: (flightArrivingData) =>{
-    const date = new Date(flightArrivingData)
+   getArrivalTime: (flightData) =>{
+    const date = new Date(flightData)
     const localeSpecificTime = date.toLocaleTimeString().replace(/:\d+ /, ' ')
     return localeSpecificTime
   }
@@ -57,10 +57,10 @@ function StatusIndicator() {
 
 function BodyInfoBlock(props) {
   const rawFlightData = props.data
-  const flightData = props.type === "arriving" ? rawFlightData.arrive_info : rawFlightData.depart_info
+  const flightData = props.type === "Arriving" ? rawFlightData.arrive_info : rawFlightData.depart_info
   return(
     <>
-    <h4 className="ft-subtitle">Departure</h4> 
+    <h4 className="ft-subtitle">{props.type}</h4> 
       <div className="ft-info">                                            
         <div className="ft-schedule-location">
           <div><span>Airport:</span>
@@ -99,17 +99,11 @@ function BodyInfoBlock(props) {
 
 function Header(props){
   const rawFlightData = props.data
-  const flightData = props.type === "arriving" ? rawFlightData.arrive_info : rawFlightData.depart_info
-  
-  const toggleID = props.toggleID
-  
-  const handleClick = (e) =>{
-    const card = document.querySelector(`#${toggleID}`);
-    card.classList.toggle('active')
-  }
+  const flightData = props.type === "Arriving" ? rawFlightData.arrive_info : rawFlightData.depart_info
 
   return(
-    <div className="ft-head" onClick={handleClick}>
+    <div className="ft-head">
+
       <div className="ft-info">
         <div className="ft-remote-city">
           {rawFlightData.remote_city}
@@ -125,7 +119,8 @@ function Header(props){
                 {flightValues.gateValue(flightData)}
             </span>
         </div>   
-      </div>    
+      </div>
+
       <div className="ft-status in-the-air">
         <span className="ft-status-label">
           {flightValues.getStatus(rawFlightData)}
@@ -135,19 +130,29 @@ function Header(props){
         </span>
         <span className="ft-status-icon status-in-air"></span>
       </div>
+      
     </div>
   )
 }
 
 function Card(props) {
   const toggleID = props.toggleID
+  
+  const handleClick = (e) =>{
+    //if i wanted only 1 card open
+    //const cards = document.querySelectorAll('.ft-flight-card')
+    //cards.forEach((card)=>{card.classList.remove('active')})
+    const card = document.querySelector(`#${toggleID}`);
+    card.classList.toggle('active')
+  }
+
   return(
-    <li className="ft-flight-card" id={toggleID}>                          
-        <Header data={props.data} toggleID={toggleID}/>
+    <li className="ft-flight-card" id={toggleID} onClick={handleClick}>                          
+        <Header data={props.data} />
         <div className="ft-body">
-            <BodyInfoBlock type="arriving" data={props.data} />
+            <BodyInfoBlock type="Arriving" data={props.data} />
             <StatusIndicator />
-              <BodyInfoBlock type="departures" data={props.data} />
+            <BodyInfoBlock type="Departure" data={props.data} />
         </div>
     </li>
   )
@@ -157,12 +162,13 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      list: props.data
+      arrivingList: props.arriveData,
+      departingList: props.departData
     };
   }
 
   render() {
-    const arrivingFlights = this.state.list;
+    const arrivingFlights = this.state.arrivingList;
 
     return (
       <section className="container" id="primary">
@@ -175,8 +181,8 @@ class App extends Component {
                     <ul className="schedule-container">
                      
                       {arrivingFlights &&
-                        arrivingFlights.map((node, index) => (
-                          <Card data={node} 
+                        arrivingFlights.map((flight, index) => (
+                          <Card data={flight} 
                                 key={"id-"+index} 
                                 toggleID={"ft-card-id-"+index}       
                           />                      
