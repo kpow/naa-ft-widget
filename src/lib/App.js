@@ -1,10 +1,39 @@
 import React, { Component } from 'react'
 import './css/App.scss'
 
-function WidgetHeader() {
+const flightValues = {
+  gateLabel:(flighData) =>{
+    let termLabel = ""
+    if (flighData.terminal && flighData.terminal.length > 0){
+      termLabel = "Term./"
+    } 
+    return `${termLabel}Gate: ` 
+  }, 
+  getStatus: (flightData) => {
+    return flightData.status
+  },
+  gateValue: (flighData) =>{
+    let termValue = ""
+    let divider = ""
+    if (flighData.terminal && flighData.terminal.length > 0){
+      termValue = flighData.terminal
+      divider = " / "
+    } 
+    const gateValue = flighData.gate
+    return termValue+divider+gateValue
+
+   },
+   getArrivalTime: (flightArrivingData) =>{
+    const date = new Date(flightArrivingData)
+    const localeSpecificTime = date.toLocaleTimeString().replace(/:\d+ /, ' ')
+    return localeSpecificTime
+  }
+}
+
+function WidgetHeader(props) {  
   return (
     <header>
-        <h3>Arrivals</h3>
+        <h3>{props.title}</h3>
         <a href="#" className="primary-button button-dark">
             See Flights
         </a>
@@ -26,19 +55,42 @@ function StatusIndicator() {
   )
 }
 
-function BodyInfoBlock() {
+function BodyInfoBlock(props) {
+  const rawFlightData = props.data
+  const flightData = props.type === "arriving" ? rawFlightData.arrive_info : rawFlightData.depart_info
   return(
     <>
     <h4 className="ft-subtitle">Departure</h4> 
       <div className="ft-info">                                            
         <div className="ft-schedule-location">
-          <div><span>Airport:</span> Miami, FL (MIA) </div>
-          <div><span>Terminal/Gate:</span> N/D60F </div>
+          <div><span>Airport:</span>
+           {rawFlightData.remote_city} {rawFlightData.remote_airport} 
+          </div>
+          <div>
+            <span>
+              {flightValues.gateLabel(flightData)}
+            </span>
+                {flightValues.gateValue(flightData)}
+          </div>
         </div> 
 
         <div className="ft-schedule-time"> 
-          <div><span>Actual:</span> Feb 4, 10:48 AM</div> 
-          <div><span>Scheduled:</span> Feb 4, 10:49 AM</div> 
+
+          {flightData.actual_gate && 
+          <div><span>Actual: </span>
+            {flightValues.getArrivalTime(flightData.actual_gate)}
+          </div>} 
+
+          {flightData.scheduled_gate && 
+          <div><span>Scheduled: </span>
+            {flightValues.getArrivalTime(flightData.scheduled_gate)}
+          </div>} 
+
+          {flightData.estimated_gate && 
+          <div><span>Estimated: </span>
+            {flightValues.getArrivalTime(flightData.estimated_gate)}
+          </div>} 
+          
         </div>
       </div>
       </> 
@@ -46,7 +98,9 @@ function BodyInfoBlock() {
 }
 
 function Header(props){
-  const flightData = props.data;
+  const rawFlightData = props.data
+  const flightData = props.type === "arriving" ? rawFlightData.arrive_info : rawFlightData.depart_info
+  
   const toggleID = props.toggleID
   
   const handleClick = (e) =>{
@@ -54,50 +108,30 @@ function Header(props){
     card.classList.toggle('active')
   }
 
-  const gateLabel = (flightArrivingData) =>{
-    const termLabel = flightArrivingData.terminal !== "" ? "Term/" : "";
-    const formatedLabel = `${termLabel}Gate: ` 
-    return formatedLabel
-  }
-
-  const gateValue = (flightArrivingData) =>{
-   const termValue = flightArrivingData.terminal
-   const gateValue = flightArrivingData.gate
-   const divider = flightArrivingData.terminal !== "" ? "/" : "";
-   const formatedValue = termValue+divider+gateValue
-   return formatedValue 
-  }
-
-  const getStatus = (flightData) => {
-      return flightData.status
-  }
-
-  const getArrivalTime = (flightArrivingData) =>{
-    const date = new Date(flightArrivingData.scheduled_gate);
-    const localeSpecificTime = date.toLocaleTimeString();
-    return localeSpecificTime.replace(/:\d+ /, ' ');
-  }
-
   return(
     <div className="ft-head" onClick={handleClick}>
       <div className="ft-info">
         <div className="ft-remote-city">
-          {flightData.remote_city}
+          {rawFlightData.remote_city}
         </div>
         <div className="ft-quick-info">
             <span className="ft-full-id">
-              {flightData.f_id}
+              {rawFlightData.f_id}
             </span> 
             <span className="ft-naa-gate">
-              <span>{gateLabel(flightData.arrive_info)}</span>
-                {gateValue(flightData.arrive_info)}
+              <span>
+                {flightValues.gateLabel(flightData)}
+              </span>
+                {flightValues.gateValue(flightData)}
             </span>
         </div>   
       </div>    
       <div className="ft-status in-the-air">
-        <span className="ft-status-label">{getStatus(flightData)}</span>
+        <span className="ft-status-label">
+          {flightValues.getStatus(rawFlightData)}
+        </span>
         <span className="ft-status-time">
-          {getArrivalTime(flightData.arrive_info)}
+          {flightValues.getArrivalTime(flightData.scheduled_gate)}
         </span>
         <span className="ft-status-icon status-in-air"></span>
       </div>
@@ -111,9 +145,9 @@ function Card(props) {
     <li className="ft-flight-card" id={toggleID}>                          
         <Header data={props.data} toggleID={toggleID}/>
         <div className="ft-body">
-            <BodyInfoBlock type="arriving" data="" />
+            <BodyInfoBlock type="arriving" data={props.data} />
             <StatusIndicator />
-            <BodyInfoBlock type="departures" data="" />
+              <BodyInfoBlock type="departures" data={props.data} />
         </div>
     </li>
   )
@@ -136,7 +170,7 @@ class App extends Component {
               <div className="card">
                   <div className="bg">
 
-                    <WidgetHeader />
+                    <WidgetHeader title="Arrivals" />
 
                     <ul className="schedule-container">
                      
