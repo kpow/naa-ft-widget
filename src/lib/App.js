@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './css/App.scss'
 
 const flightValues = {
-  gateLabel:(flighData) =>{
+  getGateLabel:(flighData) =>{
     let termLabel = ""
     if (flighData.terminal && flighData.terminal.length > 0){
       termLabel = "Term./"
@@ -12,7 +12,7 @@ const flightValues = {
   getStatus: (flightData) => {
     return flightData.status
   },
-  gateValue: (flighData) =>{
+  getGateValue: (flighData) =>{
     let termValue = ""
     let divider = ""
     if (flighData.terminal && flighData.terminal.length > 0){
@@ -23,7 +23,7 @@ const flightValues = {
     return termValue+divider+gateValue
 
    },
-   getArrivalTime: (flightData) =>{
+   getTime: (flightData) =>{
     const date = new Date(flightData)
     const localeSpecificTime = date.toLocaleTimeString().replace(/:\d+ /, ' ')
     return localeSpecificTime
@@ -57,7 +57,7 @@ function StatusIndicator() {
 
 function BodyInfoBlock(props) {
   const rawFlightData = props.data
-  const flightData = props.type === "Arriving" ? rawFlightData.arrive_info : rawFlightData.depart_info
+  const flightData = props.type === "Arrival" ? rawFlightData.arrive_info : rawFlightData.depart_info
   return(
     <>
     <h4 className="ft-subtitle">{props.type}</h4> 
@@ -68,9 +68,9 @@ function BodyInfoBlock(props) {
           </div>
           <div>
             <span>
-              {flightValues.gateLabel(flightData)}
+              {flightValues.getGateLabel(flightData)}
             </span>
-                {flightValues.gateValue(flightData)}
+                {flightValues.getGateValue(flightData)}
           </div>
         </div> 
 
@@ -78,17 +78,17 @@ function BodyInfoBlock(props) {
 
           {flightData.actual_gate && 
           <div><span>Actual: </span>
-            {flightValues.getArrivalTime(flightData.actual_gate)}
+            {flightValues.getTime(flightData.actual_gate)}
           </div>} 
 
           {flightData.scheduled_gate && 
           <div><span>Scheduled: </span>
-            {flightValues.getArrivalTime(flightData.scheduled_gate)}
+            {flightValues.getTime(flightData.scheduled_gate)}
           </div>} 
 
           {flightData.estimated_gate && 
           <div><span>Estimated: </span>
-            {flightValues.getArrivalTime(flightData.estimated_gate)}
+            {flightValues.getTime(flightData.estimated_gate)}
           </div>} 
           
         </div>
@@ -99,7 +99,7 @@ function BodyInfoBlock(props) {
 
 function Header(props){
   const rawFlightData = props.data
-  const flightData = props.type === "Arriving" ? rawFlightData.arrive_info : rawFlightData.depart_info
+  const flightData = props.type === "Arrival" ? rawFlightData.arrive_info : rawFlightData.depart_info
 
   return(
     <div className="ft-head">
@@ -114,9 +114,9 @@ function Header(props){
             </span> 
             <span className="ft-naa-gate">
               <span>
-                {flightValues.gateLabel(flightData)}
+                {flightValues.getGateLabel(flightData)}
               </span>
-                {flightValues.gateValue(flightData)}
+                {flightValues.getGateValue(flightData)}
             </span>
         </div>   
       </div>
@@ -126,7 +126,7 @@ function Header(props){
           {flightValues.getStatus(rawFlightData)}
         </span>
         <span className="ft-status-time">
-          {flightValues.getArrivalTime(flightData.scheduled_gate)}
+          {flightValues.getTime(flightData.scheduled_gate)}
         </span>
         <span className="ft-status-icon status-in-air"></span>
       </div>
@@ -140,17 +140,17 @@ function Card(props) {
   
   const handleClick = (e) =>{
     //if i wanted only 1 card open
-    //const cards = document.querySelectorAll('.ft-flight-card')
-    //cards.forEach((card)=>{card.classList.remove('active')})
+    // const cards = document.querySelectorAll('.ft-flight-card')
+    // cards.forEach((card)=>{card.classList.remove('active')})
     const card = document.querySelector(`#${toggleID}`);
     card.classList.toggle('active')
   }
 
   return(
     <li className="ft-flight-card" id={toggleID} onClick={handleClick}>                          
-        <Header data={props.data} />
+        <Header data={props.data} type={props.type}/>
         <div className="ft-body">
-            <BodyInfoBlock type="Arriving" data={props.data} />
+            <BodyInfoBlock type="Arrival" data={props.data} />
             <StatusIndicator />
             <BodyInfoBlock type="Departure" data={props.data} />
         </div>
@@ -161,14 +161,17 @@ function Card(props) {
 class App extends Component {
   constructor(props) {
     super(props)
+    props.arriveData.sort((a, b) => (a.arrive_info.scheduled_gate > b.arrive_info.scheduled_gate) ? 1 : -1);
     this.state = {
       arrivingList: props.arriveData,
-      departingList: props.departData
+      departingList: props.departData,
+      type: props.type
     };
   }
 
   render() {
-    const arrivingFlights = this.state.arrivingList;
+    const type = this.state.type;
+    const flights = this.state.arrivingList;
 
     return (
       <section className="container" id="primary">
@@ -176,15 +179,16 @@ class App extends Component {
               <div className="card">
                   <div className="bg">
 
-                    <WidgetHeader title="Arrivals" />
+                    <WidgetHeader title={`${type}s`} />
 
                     <ul className="schedule-container">
                      
-                      {arrivingFlights &&
-                        arrivingFlights.map((flight, index) => (
+                      {flights &&
+                        flights.map((flight, index) => (
                           <Card data={flight} 
                                 key={"id-"+index} 
-                                toggleID={"ft-card-id-"+index}       
+                                toggleID={"ft-card-id-"+index}
+                                type={type}      
                           />                      
                       ))}
                       

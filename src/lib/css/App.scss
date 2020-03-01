@@ -75,8 +75,6 @@
       a{color: $color-darkest-teal;}
     }
   }
- 
-
 
   .card-container{
     width: 100%;
@@ -85,5 +83,58 @@
 
 }
 
+@media (min-width: 680px) {
+
+  #primary{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    .schedule-container{
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 15px;
+      height: auto;
+    }
+
+    .card{
+      height: auto;
+      .bg header{
+        display: flex;
+
+        .button-dark, .button-light{
+          background-color: transparent;
+        }
+      }	
+    }
+
+    #arrivals .card{
+      background: $gradient-orange;
+      .bg{
+        background-image: none;
+        h3{
+          color: $color-darkest-teal;
+          margin-bottom: 0px;
+          &:after {
+            content: ""; 
+            display: none; 
+            width: 0; 
+            padding-top: 0;
+            border-bottom: none; 
+          }
+        }
+        
+        a{color: $color-darkest-teal;}
+      }
+    }
+
+    .card-container{
+      flex-direction: row;
+    }
+
+  }
+
+}
 
 @import 'ft-card.scss';

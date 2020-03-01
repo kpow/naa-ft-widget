@@ -16,7 +16,8 @@ export default {
            authId={config.authId} 
            env={config.env} 
            arriveData={arriving} 
-           departData={departing} 
+           departData={departing}
+           type="Arrival" 
        />,
       document.getElementById(targetContainerId),
     )
