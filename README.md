@@ -3,7 +3,9 @@
 
 </div>
 
-## ⭐️ Features
+```https://kpow.github.io/naa-ft-widget/#```
+
+## Features
 
 - Webpack 4
 - Babel 7
@@ -17,13 +19,13 @@
 - Customizable file headers for your build
 - Daily [dependabot](https://dependabot.com) dependency updates
 
-## 📦 Getting Started
+## Getting Started
 
 ```
 npm install
 ```
 
-## 🚀 Deployment
+## Deployment
 
 1. `npm run build`
 2. use any static hosting service to deploy the `build` folder (\*use semantic versioning for updates, add CDN for performance)
