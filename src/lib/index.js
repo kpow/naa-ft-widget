@@ -17,7 +17,7 @@ export default {
            env={config.env} 
            arriveData={arriving} 
            departData={departing}
-           type="Arrival" 
+           type={config.type} 
        />,
       document.getElementById(targetContainerId),
     )

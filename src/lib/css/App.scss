@@ -22,6 +22,10 @@
       }
   }
 
+  button:focus{
+    outline: none;
+  }
+
   #arrivals .card{
     background: $gradient-orange;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
@@ -76,12 +80,69 @@
     }
   }
 
+
+   #departures .card{
+    background: linear-gradient(115.44deg, #22768F 0.55%, #397F94 95.88%);  
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+		border-radius: 10px;
+		margin-bottom: 10px;
+		margin-left: 7px;
+    margin-right: 7px;
+
+    header{
+			height: 100%;
+			padding-top: 15px;
+			padding-left: 20px;
+			padding-right: 20px;
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+
+			h3{
+				font-size: 24px;
+				line-height: 41px;
+				font-weight: 600;
+				text-transform: capitalize;
+				color:$color-white;
+				margin-bottom: 25px;
+			}
+
+			h3:after {
+				content: ""; 
+				display: block; 
+				width: 25px; 
+				padding-top: 13px;
+				border-bottom: 2px solid $color-lighter-teal; 
+			}
+		
+		}
+    
+    .bg{
+      background-image: none;
+      h3{
+        color: $color-darkest-teal;
+        margin-bottom: 0px;
+        &:after {
+          content: ""; 
+          display: none; 
+          width: 0; 
+          padding-top: 0;
+          border-bottom: none; 
+        }
+      }
+      
+      a{color: $color-darkest-teal;}
+    }                                                           
+  }
+
   .card-container{
     width: 100%;
     flex-direction: row;
   }
 
 }
+
+
 
 @media (min-width: 680px) {
 
@@ -128,6 +189,25 @@
         a{color: $color-darkest-teal;}
       }
     }
+
+    #departures .card{
+      background: linear-gradient(115.44deg, $color-lighter-teal 0.55%, $color-lightest-teal 95.88%);  
+      .bg{
+        background-image: none;
+        h3{
+          color: $color-white;
+          margin-bottom: 0px;
+          &:after {
+            content: ""; 
+            display: none; 
+            width: 0; 
+            padding-top: 0;
+            border-bottom: none; 
+          }
+        }
+        a{color: $color-white;}
+      }
+     }
 
     .card-container{
       flex-direction: row;

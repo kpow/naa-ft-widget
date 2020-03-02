@@ -43,6 +43,11 @@ img, picture {
 	height: auto;
 }
 
+#primary .card nav a.active{
+	background-color: $color-white !important;
+	color: $color-darkest-teal !important;
+}
+
 //----------------
 //button styles
 //----------------
@@ -72,12 +77,13 @@ select.secondary-button{
 .secondary-button{
 	border-radius: 100px;
 	padding: 6px 20px 6px 20px;
-	height:34px;
+	height:24px;
+	line-height: 0;
 	text-align: center;
-	color: $color-white;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: 600;
 	letter-spacing: 0.5px;
+	border: 2px solid $color-white;
 }
 
 .outline-button{
@@ -96,7 +102,8 @@ select.secondary-button{
 }
 
 .button-dark{
-	background:$color-darkest-teal;
+	background:$color-white;
+	margin-left: 10px;
 }
 
 .button-dark:hover{

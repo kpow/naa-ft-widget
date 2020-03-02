@@ -1,11 +1,12 @@
 import './css/App.css'
-import reactWidget from './../lib'
-reactWidget.init({
+import naaWidget from './../lib'
+naaWidget.init({
   env: 'dev',
   authId: 'xxxxxxx',
   apiKey: 'xxxxxxx',
+  type: 'arrive',
 })
-console.log('reactWidget Loaded!', reactWidget)
+console.log('ftWidget Loaded!', naaWidget)
 const App = () => {
   return null
 }

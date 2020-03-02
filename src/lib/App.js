@@ -1,7 +1,17 @@
 import React, { Component } from 'react'
 import './css/App.scss'
 
+// object of helper functions for formating display items
 const flightValues = {
+  getAirportValue: (flighData, listType, type) =>{
+    let airportName
+    if(listType === type){
+      airportName = "Norfolk VA, ORF"
+    }else{
+      airportName = `${flighData.remote_city} ${flighData.remote_airport}`
+    }
+    return airportName
+ },  
   getGateLabel:(flighData) =>{
     let termLabel = ""
     if (flighData.terminal && flighData.terminal.length > 0){
@@ -30,17 +40,22 @@ const flightValues = {
   }
 }
 
-function WidgetHeader(props) {  
+// this is the comp for the main header over the listing.
+function WidgetHeader(props) { 
   return (
+    <>
     <header>
         <h3>{props.title}</h3>
         <a href="#" className="primary-button button-dark">
             See Flights
         </a>
     </header>
+    </>
   );
 }
 
+// this is the plane flight indicator,
+// TODO wire up the status to the indicator plane
 function StatusIndicator() {
   return(
     <div className="ft-status-indicator">
@@ -55,16 +70,20 @@ function StatusIndicator() {
   )
 }
 
+// this is used for all time or location block in th expanded area
 function BodyInfoBlock(props) {
   const rawFlightData = props.data
-  const flightData = props.type === "Arrival" ? rawFlightData.arrive_info : rawFlightData.depart_info
+  // we toggle if we are looking at departing or arriving info based on prop
+  const flightData = props.type === "arrive" ? rawFlightData.arrive_info : rawFlightData.depart_info
+  // this is a fun one that toggles the "home" airport based in list type
+ 
   return(
     <>
     <h4 className="ft-subtitle">{props.type}</h4> 
       <div className="ft-info">                                            
         <div className="ft-schedule-location">
           <div><span>Airport:</span>
-           {rawFlightData.remote_city} {rawFlightData.remote_airport} 
+          {flightValues.getAirportValue(rawFlightData, props.listType, props.type)}
           </div>
           <div>
             <span>
@@ -97,9 +116,11 @@ function BodyInfoBlock(props) {
   )
 }
 
+// this is the car header
 function Header(props){
   const rawFlightData = props.data
-  const flightData = props.type === "Arrival" ? rawFlightData.arrive_info : rawFlightData.depart_info
+  // we toggle if we are looking at departing or arriving info based on prop
+  const flightData = props.listType === "arrive" ? rawFlightData.arrive_info : rawFlightData.depart_info
 
   return(
     <div className="ft-head">
@@ -135,33 +156,73 @@ function Header(props){
   )
 }
 
+// this is primary object in loop
 function Card(props) {
+  // var to create class and use for event handler for accordion.
   const toggleID = props.toggleID
   
   const handleClick = (e) =>{
     //if i wanted only 1 card open
     // const cards = document.querySelectorAll('.ft-flight-card')
     // cards.forEach((card)=>{card.classList.remove('active')})
+    // toggle card visibiblty like accordion
     const card = document.querySelector(`#${toggleID}`);
     card.classList.toggle('active')
   }
 
   return(
     <li className="ft-flight-card" id={toggleID} onClick={handleClick}>                          
-        <Header data={props.data} type={props.type}/>
+        <Header data={props.data} listType={props.type}/>
         <div className="ft-body">
-            <BodyInfoBlock type="Arrival" data={props.data} />
+            <BodyInfoBlock type="depart" 
+                           data={props.data} 
+                           listType={props.type} 
+                           />
             <StatusIndicator />
-            <BodyInfoBlock type="Departure" data={props.data} />
+            <BodyInfoBlock type="arrive" 
+                           data={props.data} 
+                           listType={props.type} 
+                           />
         </div>
     </li>
   )
 }
 
+// quick nav i added for testng the sorts
+function SortNav(props){
+  const handleClick = props.handleClick;
+  return(
+    <nav style={{marginLeft:'10px'}}>
+      <a href="#" 
+        onClick={handleClick}
+        id="status" 
+        className="secondary-button button-dark">
+          status
+      </a>
+      <a href="#" 
+        onClick={handleClick} 
+        id="f_id"
+        className="secondary-button button-dark">
+          airline
+      </a>
+      <a href="#" 
+        onClick={handleClick} 
+        id="remote_city"
+        className="secondary-button button-dark">
+          city
+      </a>
+  </nav>
+  )
+
+}
+
 class App extends Component {
   constructor(props) {
     super(props)
+    // kinda random sort for now on schedule gate time for arriving and departing
     props.arriveData.sort((a, b) => (a.arrive_info.scheduled_gate > b.arrive_info.scheduled_gate) ? 1 : -1);
+    props.departData.sort((a, b) => (a.depart_info.scheduled_gate > b.depart_info.scheduled_gate) ? 1 : -1);
+
     this.state = {
       arrivingList: props.arriveData,
       departingList: props.departData,
@@ -169,20 +230,49 @@ class App extends Component {
     };
   }
 
+  // function to sort state objecty by property
+  sortData = (prevState, kind, sortProperty) =>{
+    const flightData = kind === "arrive" ? prevState.arrivingList : prevState.departingList
+    return flightData.sort((a, b) => (a[sortProperty] > b[sortProperty]) ? 1 : -1)
+  }
+
+  handleClick = (e) =>{
+    const type = e.target.id
+    // turn all elements off 
+    document.querySelectorAll(`nav a.active`).forEach((element)=>{
+      element.classList.remove('active')
+    })
+    // turn the current one on.
+    document.querySelector(`nav #${type}`).classList.add('active')
+
+    // set the state to update the dom
+    this.setState(
+      (prevState, props) => ({ arrivingList: this.sortData(prevState, 'arrive', type),
+                               departingList: this.sortData(prevState, 'depart', type) }),
+      () => console.log(this.state)
+    );
+
+  }
+
   render() {
-    const type = this.state.type;
-    const flights = this.state.arrivingList;
+    const type = this.state.type 
+    // var for css class to toggle styles based on type 
+    const typeClass = type === 'arrive' ? 'arrivals' : 'departures';
+    // we toggle if we are looking at departing or arriving info based on prop
+    const flights = type === 'arrive' ? this.state.arrivingList : this.state.departingList;
 
     return (
       <section className="container" id="primary">
-          <article className="card-container" id="arrivals">
-              <div className="card">
+          <article className="card-container" id={typeClass}>
+              <div className="card" >
                   <div className="bg">
 
-                    <WidgetHeader title={`${type}s`} />
+                    <WidgetHeader title={`${type}`} />
+
+                    <SortNav handleClick={this.handleClick} />
 
                     <ul className="schedule-container">
-                     
+                     {/* make sure we have data and map through it.*/}
                       {flights &&
                         flights.map((flight, index) => (
                           <Card data={flight} 
