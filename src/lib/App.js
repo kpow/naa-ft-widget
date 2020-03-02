@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import BodyInfoBlock from './BodyInfoBlock'
 import Header from './Header'
+import SortNav from './SortNav'
 import './css/App.scss'
 
 // this is the comp for the main header over the listing.
@@ -33,40 +34,12 @@ function StatusIndicator() {
   )
 }
 
-// quick nav i added for testng the sorts
-function SortNav(props){
-  const handleSortClick = props.handleSortClick;
-  return(
-    <nav style={{marginLeft:'10px'}}>
-      <a href="#" 
-        onClick={handleSortClick}
-        id="status" 
-        className="secondary-button button-dark">
-          status
-      </a>
-      <a href="#" 
-        onClick={handleSortClick} 
-        id="f_id"
-        className="secondary-button button-dark">
-          airline
-      </a>
-      <a href="#" 
-        onClick={handleSortClick} 
-        id="remote_city"
-        className="secondary-button button-dark">
-          city
-      </a>
-  </nav>
-  )
-
-}
-
 // this is primary object in loop
 function Card(props) {
   // var to create class and use for event handler for accordion.
   const toggleID = props.toggleID
   
-  const handleClick = (e) =>{
+  const expandCard = (e) =>{
     //if i wanted only 1 card open
     // const cards = document.querySelectorAll('.ft-flight-card')
     // cards.forEach((card)=>{card.classList.remove('active')})
@@ -76,7 +49,7 @@ function Card(props) {
   }
 
   return(
-    <li className="ft-flight-card" id={toggleID} onClick={handleClick}>                          
+    <li className="ft-flight-card" id={toggleID} onClick={expandCard}>                          
         <Header data={props.data} listType={props.type}/>
         <div className="ft-body">
             <BodyInfoBlock type="depart" 
@@ -130,8 +103,8 @@ class App extends Component {
 
     // set the state to update the dom
     this.setState(
-      (prevState, props) => ({ arrivingList: this.sortData(prevState, 'arrive', sortProperty),
-                               departingList: this.sortData(prevState, 'depart', sortProperty) }),
+      (prevState) => ({ arrivingList: this.sortData(prevState, 'arrive', sortProperty),
+                        departingList: this.sortData(prevState, 'depart', sortProperty) }),
       () => console.log(this.state)
     );
 
