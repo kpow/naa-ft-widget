@@ -43,7 +43,6 @@ function Card(props) {
     //if i wanted only 1 card open
     // const cards = document.querySelectorAll('.ft-flight-card')
     // cards.forEach((card)=>{card.classList.remove('active')})
-    // toggle card visibiblty like accordion
     const card = document.querySelector(`#${toggleID}`);
     card.classList.toggle('active')
   }
@@ -81,9 +80,7 @@ class App extends Component {
         departingList: props.departData,
         type: props.type
       };
-
     }
-
   }
 
   // function to sort state objecty by property

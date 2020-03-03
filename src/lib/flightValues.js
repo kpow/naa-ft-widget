@@ -3,37 +3,32 @@ const flightValues = {
     getAirportValue: (flighData, listType, type) =>{
       let airportName
       if(listType === type){
-        airportName = "Norfolk VA, ORF"
+        airportName = 'Norfolk VA, ORF'
       }else{
         airportName = `${flighData.remote_city} ${flighData.remote_airport}`
       }
       return airportName
    },  
     getGateLabel:(flighData) =>{
-      let termLabel = ""
+      let termLabel = ''
       if (flighData.terminal && flighData.terminal.length > 0){
-        termLabel = "Term./"
+        termLabel = 'Term./'
       } 
       return `${termLabel}Gate: ` 
     }, 
-    getStatus: (flightData) => {
-      return flightData.status
-    },
     getGateValue: (flighData) =>{
-      let termValue = ""
-      let divider = ""
+      let termValue = ''
+      let divider = ''
       if (flighData.terminal && flighData.terminal.length > 0){
         termValue = flighData.terminal
-        divider = " / "
+        divider = ' / '
       } 
       const gateValue = flighData.gate
       return termValue+divider+gateValue
-  
      },
+     getStatus: (flightData) => {return flightData.status}, 
      getTime: (flightData) =>{
-      const date = new Date(flightData)
-      const localeSpecificTime = date.toLocaleTimeString().replace(/:\d+ /, ' ')
-      return localeSpecificTime
+      return new Date(flightData).toLocaleTimeString().replace(/:\d+ /, ' ')
     }
   }
 
