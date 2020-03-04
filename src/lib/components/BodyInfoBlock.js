@@ -4,7 +4,8 @@ import flightValues from '../flightValues'
 function BodyInfoBlock({data, type, listType}) {
     const rawFlightData = data
     // we toggle if we are looking at departing or arriving info based on prop
-    const flightData = type === "arrive" ? rawFlightData.arrive_info : rawFlightData.depart_info
+    // this is a weak condition, need to fix with state somehow
+    const flightData = listType === "arrive" ? rawFlightData.arrive_info : rawFlightData.depart_info
    
     return(
       <>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Card from './Card'
-import SortNav from './SortNav'
-import '../css/App.scss'
+import Card from './components/Card'
+import SortNav from './components/SortNav'
+import './css/App.scss'
 
 // this is the comp for the main header over the listing.
 function WidgetHeader({title}) { 
@@ -42,15 +42,14 @@ class App extends Component {
     this.setState(
       (prevState) => ({ arrivingList: this.sortData(prevState, 'arrive', sortProperty),
                         departingList: this.sortData(prevState, 'depart', sortProperty) }));
-
   }
 
   render() {
-    const type = this.state.type 
+    const listType = this.state.type 
     // var for css class to toggle styles based on type 
-    const typeClass = type === 'arrive' ? 'arrivals' : 'departures';
+    const typeClass = listType === 'arrive' ? 'arrivals' : 'departures';
     // we toggle if we are looking at departing or arriving info based on prop
-    const flights = type === 'arrive' ? this.state.arrivingList : this.state.departingList;
+    const flights = listType === 'arrive' ? this.state.arrivingList : this.state.departingList;
 
     return (
       <section className="container" id="primary">
@@ -58,7 +57,7 @@ class App extends Component {
               <div className="card" >
                   <div className="bg">
 
-                    <WidgetHeader title={`${type}`} />
+                    <WidgetHeader title={`${listType}`} />
 
                     <SortNav handleSortClick={this.handleSortClick} />
 
@@ -68,7 +67,7 @@ class App extends Component {
                         flights.map((flight, index) => (
                           <Card data={flight} 
                                 key={"id-"+index} 
-                                type={type}      
+                                listType={listType}      
                           />                      
                         ))}
                       

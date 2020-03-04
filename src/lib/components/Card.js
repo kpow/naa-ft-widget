@@ -28,20 +28,20 @@ class Card extends Component {
     }
   
     render(){
-    const {data, type} = this.props;
+    const {data, listType} = this.props;
    
     return(
       <li className={`ft-flight-card ${this.state.isActive ? "active" : ""}`} onClick={this.handleExpandCard}>                          
-          <Header data={data} listType={type}/>
+          <Header data={data} listType={listType}/>
           <div className="ft-body">
               <BodyInfoBlock type="depart" 
                              data={data} 
-                             listType={type} 
+                             listType={listType} 
                              />
               <StatusIndicator />
               <BodyInfoBlock type="arrive" 
                              data={data} 
-                             listType={type} 
+                             listType={listType} 
                              />
           </div>
       </li>
