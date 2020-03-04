@@ -1,5 +1,5 @@
 import React from 'react'
-import flightValues from './flightValues'
+import flightValues from '../flightValues'
 
 function BodyInfoBlock({data, type, listType}) {
     const rawFlightData = data

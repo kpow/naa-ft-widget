@@ -1,5 +1,5 @@
 import React from 'react'
-import flightValues from './flightValues'
+import flightValues from '../flightValues'
 
 // this is the card header comp
 function Header({data, listType}){

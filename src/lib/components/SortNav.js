@@ -1,8 +1,7 @@
 import React from 'react'
 
 // quick nav i added for testng the sorts
-function SortNav(props){
-    const handleSortClick = props.handleSortClick;
+function SortNav({handleSortClick}){
     return(
       <nav style={{marginLeft:'10px'}}>
         <a href="#" 
