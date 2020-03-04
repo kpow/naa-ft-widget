@@ -1,18 +1,18 @@
 import React from 'react'
 import flightValues from './flightValues'
 
-function BodyInfoBlock(props) {
-    const rawFlightData = props.data
+function BodyInfoBlock({data, type, listType}) {
+    const rawFlightData = data
     // we toggle if we are looking at departing or arriving info based on prop
-    const flightData = props.type === "arrive" ? rawFlightData.arrive_info : rawFlightData.depart_info
+    const flightData = type === "arrive" ? rawFlightData.arrive_info : rawFlightData.depart_info
    
     return(
       <>
-      <h4 className="ft-subtitle">{props.type}</h4> 
+      <h4 className="ft-subtitle">{type}</h4> 
         <div className="ft-info">                                            
           <div className="ft-schedule-location">
             <div><span>Airport:</span>
-            {flightValues.getAirportValue(rawFlightData, props.listType, props.type)}
+            {flightValues.getAirportValue(rawFlightData, listType, type)}
             </div>
             <div>
               <span>

@@ -5,11 +5,11 @@ import SortNav from './SortNav'
 import './css/App.scss'
 
 // this is the comp for the main header over the listing.
-function WidgetHeader(props) { 
+function WidgetHeader({title}) { 
   return (
     <>
     <header>
-        <h3>{props.title}</h3>
+        <h3>{title}</h3>
         <a href="#" className="primary-button button-dark">
             See Flights
         </a>
@@ -35,34 +35,35 @@ function StatusIndicator() {
 }
 
 // this is primary object in loop
-function Card(props) {
-  // var to create class and use for event handler for accordion.
-  const toggleID = props.toggleID
-  
-  const expandCard = (e) =>{
-    //if i wanted only 1 card open
-    // const cards = document.querySelectorAll('.ft-flight-card')
-    // cards.forEach((card)=>{card.classList.remove('active')})
-    const card = document.querySelector(`#${toggleID}`);
-    card.classList.toggle('active')
+class Card extends Component {
+  state = { 
+    isActive: false
   }
 
+  handleExpandCard = () =>{
+    this.setState( (prevState) => ({ isActive: !prevState.isActive }) );
+  }
+
+  render(){
+  const {toggleID, data, type} = this.props;
+ 
   return(
-    <li className="ft-flight-card" id={toggleID} onClick={expandCard}>                          
-        <Header data={props.data} listType={props.type}/>
+    <li className={`ft-flight-card ${this.state.isActive ? "active" : ""}`} id={toggleID} onClick={this.handleExpandCard}>                          
+        <Header data={data} listType={type}/>
         <div className="ft-body">
             <BodyInfoBlock type="depart" 
-                           data={props.data} 
-                           listType={props.type} 
+                           data={data} 
+                           listType={type} 
                            />
             <StatusIndicator />
             <BodyInfoBlock type="arrive" 
-                           data={props.data} 
-                           listType={props.type} 
+                           data={data} 
+                           listType={type} 
                            />
         </div>
     </li>
   )
+  }
 }
 
 // primary widget component -> state lives here
@@ -83,27 +84,22 @@ class App extends Component {
     }
   }
 
-  // function to sort state objecty by property
   sortData = (prevState, kind, sortProperty) =>{
     const flightData = kind === "arrive" ? prevState.arrivingList : prevState.departingList
     return flightData.sort((a, b) => (a[sortProperty] > b[sortProperty]) ? 1 : -1)
   }
 
-  // this handles the clicks on the sort nav and just updates the state
-  handleSortClick = (e) =>{
-    const sortProperty = e.target.id
-    // turn all elements off  and turn the current one on.
+  handleSortClick = (sortProperty, e) =>{
+    // need to remove this technique and  move to a state based one
     document.querySelectorAll(`nav a.active`).forEach((element)=>{
       element.classList.remove('active')
     })
-    document.querySelector(`nav #${sortProperty}`).classList.add('active')
+    e.target.classList.add('active')
 
     // set the state to update the dom
     this.setState(
       (prevState) => ({ arrivingList: this.sortData(prevState, 'arrive', sortProperty),
-                        departingList: this.sortData(prevState, 'depart', sortProperty) }),
-      () => console.log(this.state)
-    );
+                        departingList: this.sortData(prevState, 'depart', sortProperty) }));
 
   }
 

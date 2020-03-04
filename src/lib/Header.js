@@ -2,10 +2,10 @@ import React from 'react'
 import flightValues from './flightValues'
 
 // this is the card header comp
-function Header(props){
-    const rawFlightData = props.data
+function Header({data, listType}){
+    const rawFlightData = data
     // we toggle if we are looking at departing or arriving info based on prop
-    const flightData = props.listType === "arrive" ? rawFlightData.arrive_info : rawFlightData.depart_info
+    const flightData = listType === "arrive" ? rawFlightData.arrive_info : rawFlightData.depart_info
   
     return(
       <div className="ft-head">
