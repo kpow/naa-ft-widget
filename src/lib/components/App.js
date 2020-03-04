@@ -17,8 +17,7 @@ function WidgetHeader({title}) {
   );
 }
 
-
-// primary widget component -> state lives here
+// primary widget component -> app state lives here
 class App extends Component {
 
   state = {
@@ -39,12 +38,6 @@ class App extends Component {
   }
 
   handleSortClick = (sortProperty, e) =>{
-    // need to remove this technique and  move to a state based one
-    document.querySelectorAll(`nav a.active`).forEach((element)=>{
-      element.classList.remove('active')
-    })
-    e.target.classList.add('active')
-
     // set the state to update the dom
     this.setState(
       (prevState) => ({ arrivingList: this.sortData(prevState, 'arrive', sortProperty),
@@ -77,7 +70,7 @@ class App extends Component {
                                 key={"id-"+index} 
                                 type={type}      
                           />                      
-                      ))}
+                        ))}
                       
                     </ul>
                   </div>
