@@ -28,7 +28,8 @@ const flightValues = {
      },
      getStatus: (flightData) => {return flightData.status}, 
      getTime: (flightData) =>{
-      return new Date(flightData).toLocaleTimeString().replace(/:\d+ /, ' ')
+       const date = new Date(flightData.replace(' ', 'T'))
+      return new Date(date).toLocaleTimeString().replace(/:\d+ /, ' ')
     }
   }
 
