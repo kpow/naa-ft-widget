@@ -4,16 +4,16 @@ import flightValues from '../flightValues'
 
 function BodyInfoBlock({index, type}) {
   let rawFlightData, flightData
-  const buildData = (data, listType) => {
+  const buildData = (data, type) => {
     rawFlightData = data
-    flightData = listType === "arrive" ? rawFlightData.arrive_info : rawFlightData.depart_info
+    flightData = type === "arrive" ? rawFlightData.arrive_info : rawFlightData.depart_info
   }
     return(
       <Consumer>
       { context => (
         <React.Fragment>
 
-        {buildData(context.flights[index], context.listType)}
+        {buildData(context.flights[index], type)}
 
         <h4 className="ft-subtitle">{type}</h4> 
           <div className="ft-info">                                            
