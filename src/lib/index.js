@@ -11,12 +11,13 @@ export default {
       targetContainer.setAttribute('id', targetContainerId)
       document.body.appendChild(targetContainer)
     }
+    const flightData = config.type === "arrive" ? arriving : departing
+    
     ReactDOM.render(
       <App apiKey={config.apiKey} 
            authId={config.authId} 
            env={config.env} 
-           arriveData={arriving} 
-           departData={departing}
+           flightData={flightData}
            type={config.type} 
        />,
       document.getElementById(targetContainerId),

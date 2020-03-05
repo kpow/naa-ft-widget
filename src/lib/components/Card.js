@@ -19,30 +19,26 @@ function StatusIndicator() {
   }
 
 class Card extends Component {
-    state = { 
-      isActive: false
-    }
+    state = { isActive: false }
   
     handleExpandCard = () =>{
       this.setState( (prevState) => ({ isActive: !prevState.isActive }) );
     }
   
     render(){
-    const {data, listType} = this.props;
-   
+    const {index} = this.props;
+    const itemClass = `ft-flight-card ${this.state.isActive ? "active" : ""}`
     return(
-      <li className={`ft-flight-card ${this.state.isActive ? "active" : ""}`} onClick={this.handleExpandCard}>                          
-          <Header data={data} listType={listType}/>
+      <li className={itemClass} onClick={this.handleExpandCard}>
+
+          <Header index={index} />
+
           <div className="ft-body">
               <BodyInfoBlock type="depart" 
-                             data={data} 
-                             listType={listType} 
-                             />
+                             index={index} />
               <StatusIndicator />
-              <BodyInfoBlock type="arrive" 
-                             data={data} 
-                             listType={listType} 
-                             />
+              <BodyInfoBlock type="arrive"
+                             index={index} />
           </div>
       </li>
     )
