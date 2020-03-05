@@ -16,7 +16,7 @@ function StatusIndicator() {
         <div className="indicator-line"></div>
       </div>                       
     )
-  }
+}
 
 class Card extends Component {
     state = { isActive: false }
@@ -26,23 +26,25 @@ class Card extends Component {
     }
   
     render(){
-    const {index} = this.props;
-    const itemClass = `ft-flight-card ${this.state.isActive ? "active" : ""}`
-    return(
-      <li className={itemClass} onClick={this.handleExpandCard}>
+      const {index} = this.props;
+      const itemClass = `ft-flight-card ${this.state.isActive ? "active" : ""}`
 
-          <Header index={index} />
+      return(
+        <li className={itemClass} onClick={this.handleExpandCard}>
 
-          <div className="ft-body">
-              <BodyInfoBlock type="depart" 
-                             index={index} />
-              <StatusIndicator />
-              <BodyInfoBlock type="arrive"
-                             index={index} />
-          </div>
-      </li>
-    )
+            <Header index={index} />
+
+            <div className="ft-body">
+                <BodyInfoBlock type="depart" 
+                              index={index} />
+                <StatusIndicator />
+                <BodyInfoBlock type="arrive"
+                              index={index} />
+            </div>
+        </li>
+      )
     }
+
   }
 
   export default Card

@@ -14,26 +14,27 @@ function Header({index}){
       { context => (
         <React.Fragment>
 
-          {buildData(context.flights[index], context.listType)}
+        {buildData(context.flights[index], context.listType)}
 
-          <div className="ft-head">
+        <div className="ft-head">
+
           <div className="ft-info">
             <div className="ft-remote-city">
               {rawFlightData.remote_city}
             </div>
             <div className="ft-quick-info">
-                <span className="ft-full-id">
-                  {rawFlightData.f_id}
-                </span> 
-                <span className="ft-naa-gate">
-                  <span>
-                    {flightValues.getGateLabel(flightData)}
-                  </span>
-                    {flightValues.getGateValue(flightData)}
+              <span className="ft-full-id">
+                {rawFlightData.f_id}
+              </span> 
+              <span className="ft-naa-gate">
+                <span>
+                {flightValues.getGateLabel(flightData)}
                 </span>
+                  {flightValues.getGateValue(flightData)}
+              </span>
             </div>   
           </div>
-    
+
           <div className="ft-status in-the-air">
             <span className="ft-status-label">
               {flightValues.getStatus(rawFlightData)}
@@ -43,9 +44,9 @@ function Header({index}){
             </span>
             <span className="ft-status-icon status-in-air"></span>
           </div>
-          
+
         </div>
-      </React.Fragment>
+        </React.Fragment>
       )}
     </Consumer>
     )
