@@ -1,40 +1,38 @@
 import React, { Component } from 'react'
-import Card from './components/Card'
-import SortNav from './components/SortNav'
-import { Provider } from './context';
-import './css/App.scss'
+import Card from './Card'
+import SortNav from './SortNav'
+import { Provider } from '../context';
+import '../css/App.scss'
 
 // this is the comp for the main header over the listing.
 function WidgetHeader({title}) { 
   return (
-    <>
+ 
     <header>
         <h3>{title}</h3>
         <a href="#" className="primary-button button-dark">
             See Flights
         </a>
     </header>
-    </>
+  
   );
 }
 
 class App extends Component {
-    // wonky condition to pass unit test
-    state = this.props ? {
-      flightList : this.props.flightData,
-      listType: this.props.type
-    } : {}
- 
+  // wonky condition to pass unit test
+  state = this.props ? {
+    flightList : this.props.flightData,
+    listType: this.props.type
+  } : {}
 
   componentDidMount(){
-   if(this.state.listType === "arrive"){
-    this.setState((prevState) => 
-    ({ flightList: prevState.flightList.sort((a, b) => (a.arrive_info.scheduled_gate > b.arrive_info.scheduled_gate) ? 1 : -1) }));
-   }else{
-    this.setState((prevState) => 
-    ({ flightList: prevState.flightList.sort((a, b) => (a.depart_info.scheduled_gate > b.depart_info.scheduled_gate) ? 1 : -1) }));
-   }
-    
+    if(this.state.listType === "arrive"){
+      this.setState((prevState) => 
+      ({ flightList: prevState.flightList.sort((a, b) => (a.arrive_info.scheduled_gate > b.arrive_info.scheduled_gate) ? 1 : -1) }));
+    }else{
+      this.setState((prevState) => 
+      ({ flightList: prevState.flightList.sort((a, b) => (a.depart_info.scheduled_gate > b.depart_info.scheduled_gate) ? 1 : -1) }));
+    }
   }
 
   sortData = (prevState, sortProperty) =>{

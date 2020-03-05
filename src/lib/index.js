@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import App from './components/App'
 import { arriving, departing  } from './ft-data.json'
 
 const targetContainerId = `widget__container`
