@@ -3,11 +3,12 @@ import { Consumer } from '../context';
 import flightValues from '../flightValues'
 
 function BodyInfoBlock({index, type}) {
-  let rawFlightData, flightData
+  let rawFlightData, flightData, blockTitle
   
   const buildData = (data, type) => {
     rawFlightData = data
-    flightData = type === "arrive" ? rawFlightData.arrive_info : rawFlightData.depart_info
+    flightData = type === 'arrive' ? rawFlightData.arrive_info : rawFlightData.depart_info
+    blockTitle = type === 'arrive' ? 'Arrival' : 'Departure'
   }
     return(
       <Consumer>
@@ -16,7 +17,7 @@ function BodyInfoBlock({index, type}) {
 
           {buildData(context.flights[index], type)}
 
-          <h4 className="ft-subtitle">{type}</h4> 
+          <h4 className="ft-subtitle">{blockTitle}</h4> 
           <div className="ft-info">                                            
             <div className="ft-schedule-location">
               <div>

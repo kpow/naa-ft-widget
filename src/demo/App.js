@@ -4,7 +4,7 @@ naaWidget.init({
   env: 'dev',
   authId: 'xxxxxxx',
   apiKey: 'xxxxxxx',
-  type: 'depart',
+  type: 'arrive',
 })
 console.log('ftWidget Loaded!', naaWidget)
 const App = () => {

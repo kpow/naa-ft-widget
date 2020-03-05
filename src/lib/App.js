@@ -51,13 +51,13 @@ class App extends Component {
     const flights =  this.state.flightList
 
     return (
-      <Provider value={{flights:this.state.flightList, listType:this.state.listType}}>
+      <Provider value={{flights:flights, listType:listType}}>
         <section className="container" id="primary">
             <article className="card-container" id={typeClass}>
                 <div className="card" >
                     <div className="bg">
 
-                      <WidgetHeader title={`${listType}`} />
+                      <WidgetHeader title={`${typeClass}`} />
 
                       <SortNav handleSortClick={this.handleSortClick} />
 
