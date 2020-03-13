@@ -3,7 +3,10 @@
 
 </div>
 
-```https://kpow.github.io/naa-ft-widget/#```
+https://kpow.github.io/naa-ft-widget/
+
+https://kpow.github.io/naa-ft-widget/index_arrive.html
+
 
 ## Features
 
